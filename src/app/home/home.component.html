@@ -1,0 +1,29 @@
+<p>home works!</p>
+
+{{title}}
+<h1>Liste des produits</h1>
+<table border="2">
+    <tr>
+        <th>Id</th>
+        <th>title</th>
+        <th>price</th>
+        <th>quantity</th>
+        <th>like</th>
+        <th>Actions</th>
+    </tr>
+    <tr *ngFor="let p of listProduct , let i=index">
+        <td>{{p.id}}</td>
+        <td>{{p.title}}</td>
+        <td>{{p.price}}</td>
+        <td>{{p.quantity}}</td>
+        <td>{{p.like}}</td>
+        <td><button (click)="increment(i)">like</button></td>
+        <td><button (click)="buy(i)" [disabled]="p.quantity==0">buy</button></td>
+
+    </tr>
+</table>
+<input type="submit" value="hi" (click)="msg()">
+<div [style.backgroundColor]="color">properyBinding</div>
+<br>
+
+<input type="text" [(ngModel)]="color">
