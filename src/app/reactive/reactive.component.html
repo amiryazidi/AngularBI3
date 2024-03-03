@@ -23,10 +23,25 @@
     </div>
     <label>name</label>
     <input class="form-control" type="text" placeholder="name" formControlName="name">
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['name'].invalid &&
+    this.registerForm.controls['name'].touched">
+        <div *ngIf="this.registerForm.get('name')?.hasError('required')">name required</div>
+        <div *ngIf="this.registerForm.get('name')?.hasError('minlength')">name min length 5</div>
+    </div>
     <label>age</label>
     <input class="form-control" type="number" placeholder="age" formControlName="age">
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['age'].invalid &&
+    this.registerForm.controls['age'].touched">
+        <div *ngIf="this.registerForm.get('age')?.hasError('required')">age required</div>
+    </div>
     <label>Email</label>
     <input class="form-control" type="text" placeholder="Email" formControlName="email">
+
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['email'].invalid &&
+    this.registerForm.controls['email'].touched">
+        <div *ngIf="this.registerForm.get('email')?.hasError('required')">email required</div>
+        <div *ngIf="this.registerForm.get('email')?.hasError('pattern')">emain non valid</div>
+    </div>
     <input class="btn btn-info" type="submit" value="save" [disabled]="registerForm.invalid">
 
 </form>

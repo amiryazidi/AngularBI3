@@ -6,12 +6,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { ApartementComponent } from './apartement/apartement.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { AddProductComponent } from './add-product/add-product.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/product',pathMatch:"full"},
   {path:'product',component:HomeComponent},
   {path:'residence',component:ResidencesComponent},
   {path:'form',component:ReactiveComponent},
+  {path:'addProduct',component:AddProductComponent},
   {path:'product/:id',component:DetailProductComponent},
   {path:'apartement/:id',component:ApartementComponent},
   {path:'**' , component:NotFoundComponent}

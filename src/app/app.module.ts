@@ -10,7 +10,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { DetailProductComponent } from './detail-product/detail-product.component';
 import { ApartementComponent } from './apartement/apartement.component';
 import { ReactiveComponent } from './reactive/reactive.component';
-
+import { AddProductComponent } from './add-product/add-product.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +21,14 @@ import { ReactiveComponent } from './reactive/reactive.component';
     DetailProductComponent,
     ApartementComponent,
     ReactiveComponent,
+    AddProductComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

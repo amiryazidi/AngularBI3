@@ -15,7 +15,7 @@ export class ReactiveComponent {
     cin:new FormControl('',[Validators.required,Validators.pattern('[0-9]{8}')]),
     name:new FormControl('',[Validators.required,Validators.minLength(5)]),
     age:new FormControl('',Validators.required),
-    email:new FormControl('',[Validators.required,Validators.email]),
+    email:new FormControl('',[Validators.required,Validators.pattern(/^Vdepart.*/)]),
   })
   save(){
     console.log(this.lg)

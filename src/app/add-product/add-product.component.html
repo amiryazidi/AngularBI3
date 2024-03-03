@@ -1,0 +1,44 @@
+<form class="form-group" [formGroup]="registerForm">
+    <label>id</label>
+    <input class="form-control" type="text" placeholder="id" formControlName="id">
+
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['id'].invalid &&
+     this.registerForm.controls['id'].touched">
+        <div *ngIf="this.registerForm.get('id')?.hasError('required')">id required</div>
+        <div *ngIf="this.registerForm.get('id')?.hasError('pattern')">id doit etre positive</div>
+    </div>
+    <label>title</label>
+    <input class="form-control" type="text" placeholder="title" formControlName="title">
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['title'].invalid &&
+    this.registerForm.controls['title'].touched">
+        <div *ngIf="this.registerForm.get('title')?.hasError('required')">name required</div>
+        <div *ngIf="this.registerForm.get('title')?.hasError('minlength')">name min length 5</div>
+    </div>
+    <label>quantity</label>
+    <input class="form-control" type="number" placeholder="quantity" formControlName="quantity">
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['quantity'].invalid &&
+    this.registerForm.controls['quantity'].touched">
+        <div *ngIf="this.registerForm.get('quantity')?.hasError('required')">quantity required</div>
+    </div>
+    <label>price</label>
+    <input class="form-control" type="text" placeholder="price" formControlName="price">
+
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['price'].invalid &&
+    this.registerForm.controls['price'].touched">
+        <div *ngIf="this.registerForm.get('price')?.hasError('required')">price required</div>
+    </div>
+
+    <label>like</label>
+    <input class="form-control" type="text" placeholder="like" formControlName="like">
+
+    <div class="alert alert-danger" *ngIf="this.registerForm.controls['like'].invalid &&
+    this.registerForm.controls['like'].touched">
+        <div *ngIf="this.registerForm.get('like')?.hasError('required')">like required</div>
+    </div>
+
+
+
+
+    <input class="btn btn-info" type="submit" value="save" [disabled]="registerForm.invalid" (click)="add()">
+
+</form>
